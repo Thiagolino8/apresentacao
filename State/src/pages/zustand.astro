@@ -1,0 +1,13 @@
+---
+import { ZustandCounter } from "../components/ZustandCounter";
+import Col from "../layouts/Col.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+
+<Layout title="Zustand">
+	<Col>
+		<ZustandCounter client:load />
+		<ZustandCounter client:load />
+	</Col>
+</Layout>

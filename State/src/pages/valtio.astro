@@ -1,0 +1,13 @@
+---
+import { ValtioCounter } from "../components/ValtioCounter";
+import Col from "../layouts/Col.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+
+<Layout title="Valtio">
+	<Col>
+		<ValtioCounter client:load />
+		<ValtioCounter client:load />
+	</Col>
+</Layout>

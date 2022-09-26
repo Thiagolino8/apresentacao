@@ -1,0 +1,77 @@
+---
+import { Spa } from 'astro-spa'
+export interface Props {
+	title: string
+}
+
+const route = Astro.url.pathname
+const { title } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<meta name='generator' content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class='flex flex-col items-center justify-center h-screen'>
+		<div>
+			<header class='App-header'>
+				<nav class='m-3 btn-group'>
+					<a class={`btn ${route === '/reactlocal' ? 'btn-accent' : ''}`} href='/reactlocal'>React Local</a>
+					<a class={`btn ${route === '/staleclojure' ? 'btn-accent' : ''}`} href='/staleclojure'>Stale Clojure</a>
+					<a class={`btn ${route === '/solidlocal' ? 'btn-accent' : ''}`} href='/solidlocal'>Solid Local</a>
+					<a class={`btn ${route === '/sveltelocal' ? 'btn-accent' : ''}`} href='/sveltelocal'>Svelte Local</a>
+					<a class={`btn ${route === '/svelteglobal' ? 'btn-accent' : ''}`} href='/svelteglobal'>Svelte global</a>
+					<a class={`btn ${route === '/solidglobal' ? 'btn-accent' : ''}`} href='/solidglobal'>Solid global</a>
+					<a class={`btn ${route === '/jotai' ? 'btn-accent' : ''}`} href='/jotai'>Jotai</a>
+					<a class={`btn ${route === '/valtio' ? 'btn-accent' : ''}`} href='/valtio'>Valtio</a>
+					<a class={`btn ${route === '/zustand' ? 'btn-accent' : ''}`} href='/zustand'>Zustand</a>
+				</nav>
+			</header>
+		</div><div class='grid flex-1 place-content-center'>
+			<slot />
+		</div>
+		<style>
+			:root {
+				--font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+				--font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
+				--font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+
+				--color-text: hsl(12, 5%, 4%);
+				--color-bg: hsl(10, 21%, 95%);
+				--color-border: hsl(17, 24%, 90%);
+			}
+
+			html {
+				font-family: system-ui, sans-serif;
+				font-size: var(--font-size-base);
+				color: var(--color-text);
+				background-color: var(--color-bg);
+			}
+
+			body {
+				margin: 0;
+			}
+		</style>
+
+		<style is:global>
+			h1 {
+				font-size: var(--font-size-xl);
+			}
+
+			h2 {
+				font-size: var(--font-size-lg);
+			}
+
+			code {
+				font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono,
+					Courier New, monospace;
+			}
+		</style>
+		<Spa defaultAnimation={false} highPriorityPrefetch={true} prefetchUpgradation={false} />
+	</body>
+</html>

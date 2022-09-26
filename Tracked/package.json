@@ -1,0 +1,37 @@
+{
+  "name": "tracked",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@twind/react": "^0.0.4",
+    "immer": "^9.0.15",
+    "mobx": "^6.6.2",
+    "mobx-react-lite": "^3.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-tracked": "^1.7.10",
+    "styled-components": "^5.3.5",
+    "styled-wind": "0.0.0-beta.14",
+    "twind": "^0.16.17",
+    "use-immer": "^0.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.1",
+    "@types/node": "^18.7.23",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.1.0",
+    "babel-plugin-styled-wind": "^0.0.4",
+    "daisyui": "^2.31.0",
+    "typescript": "^4.8.3",
+    "vite": "^3.1.3",
+    "vite-plugin-babel": "^1.1.2",
+    "vite-plugin-windicss": "^1.8.8",
+    "windicss": "^3.5.6"
+  }
+}

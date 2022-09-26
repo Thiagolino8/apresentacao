@@ -1,0 +1,13 @@
+---
+import { SolidGlobal } from "../components/SolidGlobal";
+import Col from "../layouts/Col.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+
+<Layout title="Solid Global">
+	<Col>
+		<SolidGlobal client:load />
+		<SolidGlobal client:load />
+	</Col>
+</Layout>

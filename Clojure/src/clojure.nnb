@@ -1,0 +1,178 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "# Stale Clojure"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Closure é uma função que lembra as variáveis do local onde foi definida, independente de onde seja executada posteriormente."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "A função increment é um Clojure pois lembra devariáveis"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "const makeFunc = () => {\n\tconst name = 'Mozilla'\n\tfunction displayName() {\n\t\tconsole.log(name)\n\t}\n\treturn displayName\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "const myFunc = makeFunc()\nmyFunc()"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Mozilla",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "const makeAdder = (x: number) => {\n\treturn (y: number) => {\n\t\treturn console.log(x + y)\n\t}\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "const add5 = makeAdder(5)\nconst add10 = makeAdder(10)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "add5(2)\nadd10(2)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "7",
+                                "12",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Neste exemplo apesar de ambas as funções add5 e add10 terem sido criadas a partir de makeAdder a função no retorno de cada uma é um clojure com uma referência diferente do valor de x"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Um clojure em uma função funciona de forma parecida com acessar uma propriedade privada em uma classe a partir de um método"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "class MakeAdder {\n\tprivate x: number\n\tconstructor(x: number) {\n\t\tthis.x = x\n\t}\n\tadd(y: number) {\n\t\tconsole.log(this.x + y)\n\t}\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "const classAdd5 = new MakeAdder(5)\nconst classAdd10 = new MakeAdder(10)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "classAdd5.add(2)\nclassAdd10.add(2)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "7",
+                                "12",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Stale Clojure é simplesmente uma função que captura variáveis que possuem valores desatualizados.\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "let number = {value: 0}\n\nconst increment = () => {\n\tconst number2 = number\n\tnumber.value += 1\n\tconst message = `Incremented to ${number.value}`\n\n\treturn () => {\n\t\tconsole.log(`Number: ${number.value}`)\n\t\tconsole.log(`Number2: ${number2.value}`)\n\t\tconsole.log(message)\n\t}\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "const log = increment()\nincrement()\nconst log2 = increment()\nincrement()\nlog()\nlog2()"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Number: 4",
+                                "Number2: 4",
+                                "Incremented to 1",
+                                "Number: 4",
+                                "Number2: 4",
+                                "Incremented to 3",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Neste exemplo a função log executa a função retornada pela função increment que por sua vez executa 3 console.log, o primeiro corretamente com o valor atual da variável global number, mas os outros 2 com o valor antigo da variável global number, a referência estava presa num clojure de quando foi criada"
+            ],
+            "outputs": []
+        }
+    ]
+}

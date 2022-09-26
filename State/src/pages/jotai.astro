@@ -1,0 +1,13 @@
+---
+import { JotaiCounter } from "../components/JotaiCounter";
+import Col from "../layouts/Col.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+
+<Layout title="Jotai">
+	<Col>
+		<JotaiCounter client:load/>
+		<JotaiCounter client:load/>
+	</Col>
+</Layout>
