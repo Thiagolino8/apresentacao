@@ -17,22 +17,24 @@ const { title } = Astro.props
 		<meta name='generator' content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class='flex flex-col items-center justify-center h-screen'>
+	<body class='flex flex-col items-center justify-start h-screen overflow-x-hidden max-h-96'>
 		<div>
 			<header class='App-header'>
-				<nav class='m-3 btn-group'>
+				<nav class='my-3 btn-group'>
 					<a class={`btn ${route === '/reactlocal' ? 'btn-accent' : ''}`} href='/reactlocal'>React Local</a>
 					<a class={`btn ${route === '/staleclojure' ? 'btn-accent' : ''}`} href='/staleclojure'>Stale Clojure</a>
 					<a class={`btn ${route === '/solidlocal' ? 'btn-accent' : ''}`} href='/solidlocal'>Solid Local</a>
 					<a class={`btn ${route === '/sveltelocal' ? 'btn-accent' : ''}`} href='/sveltelocal'>Svelte Local</a>
 					<a class={`btn ${route === '/svelteglobal' ? 'btn-accent' : ''}`} href='/svelteglobal'>Svelte global</a>
 					<a class={`btn ${route === '/solidglobal' ? 'btn-accent' : ''}`} href='/solidglobal'>Solid global</a>
+					<a class={`btn ${route === '/sharednano' ? 'btn-accent' : ''}`} href='/sharednano'>Shared Nano</a>
 					<a class={`btn ${route === '/jotai' ? 'btn-accent' : ''}`} href='/jotai'>Jotai</a>
 					<a class={`btn ${route === '/valtio' ? 'btn-accent' : ''}`} href='/valtio'>Valtio</a>
 					<a class={`btn ${route === '/zustand' ? 'btn-accent' : ''}`} href='/zustand'>Zustand</a>
 				</nav>
 			</header>
-		</div><div class='grid flex-1 place-content-center'>
+		</div>
+		<div class='grid flex-1 place-content-center'>
 			<slot />
 		</div>
 		<style>

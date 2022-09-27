@@ -10,8 +10,8 @@ interface Props {
 }
 
 export const SolidTemplate = ({ count, countByHalf, increment, decrement, reset, double }: Props) => (
-	<div className='flex flex-col items-center justify-center flex-1 text-center'>
-		<div className='stat'>
+	<div className='flex flex-col items-center justify-start flex-1 text-center'>
+		<div className='stat pt-0'>
 			<p className='stat-value'>count: {count()}</p>
 			<p className='stat-value'>countByHalf: {countByHalf()}</p>
 		</div>

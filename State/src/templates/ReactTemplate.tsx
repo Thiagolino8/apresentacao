@@ -10,8 +10,8 @@ interface Props {
 }
 
 export const ReactTemplate = ({ count, countByHalf, increment, decrement, reset, double }: Props) => (
-	<div className='flex-1 flex flex-col items-center justify-center text-center'>
-		<div className='stat'>
+	<div className='flex-1 flex flex-col items-center justify-start text-center'>
+		<div className='stat pt-0'>
 			<p className='stat-value'>count: {count}</p>
 			<p className='stat-value'>countByHalf: {countByHalf}</p>
 		</div>

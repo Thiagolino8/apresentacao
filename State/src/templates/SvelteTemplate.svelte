@@ -7,8 +7,8 @@
   export let double: () => void
 </script>
 
-<div class="flex flex-col items-center justify-center flex-1 text-center">
-	<div class="stat">
+<div class="flex flex-col items-center justify-start flex-1 text-center">
+	<div class="pt-0 stat">
 		<p class="stat-value">count: {count}</p>
 		<p class="stat-value">countByHalf: {countByHalf}</p>
 	</div>

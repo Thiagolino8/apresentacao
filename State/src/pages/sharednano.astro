@@ -1,0 +1,16 @@
+---
+import { ReactShared } from "../components/ReactShared";
+import { SolidShared } from "../components/SolidShared";
+import SvelteShared from "../components/SvelteShared.svelte";
+import Col from "../layouts/Col.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+
+<Layout title="Shared Global">
+	<Col>
+		<SolidShared client:load />
+		<ReactShared client:load />
+		<SvelteShared client:load />
+	</Col>
+</Layout>
