@@ -1,8 +1,8 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react'
 
-import { ReactTemplate } from '../templates/ReactTemplate';
+import { ReactTemplate } from '../templates/ReactTemplate'
 
-export const StaleClojure = () => {
+export const Staleclosure = () => {
 	const [count, setCount] = useState(0)
 	const countByHalf = useMemo(() => count / 2, [])
 	const increment = useCallback(() => setCount(count + 1), [])

@@ -3,7 +3,7 @@
         {
             "language": "markdown",
             "source": [
-                "# Stale Clojure"
+                "# Stale closure"
             ],
             "outputs": []
         },
@@ -17,7 +17,7 @@
         {
             "language": "markdown",
             "source": [
-                "A função increment é um Clojure pois lembra devariáveis"
+                "A função increment é um closure pois lembra devariáveis"
             ],
             "outputs": []
         },
@@ -84,14 +84,14 @@
         {
             "language": "markdown",
             "source": [
-                "Neste exemplo apesar de ambas as funções add5 e add10 terem sido criadas a partir de makeAdder a função no retorno de cada uma é um clojure com uma referência diferente do valor de x"
+                "Neste exemplo apesar de ambas as funções add5 e add10 terem sido criadas a partir de makeAdder a função no retorno de cada uma é um closure com uma referência diferente do valor de x"
             ],
             "outputs": []
         },
         {
             "language": "markdown",
             "source": [
-                "Um clojure em uma função funciona de forma parecida com acessar uma propriedade privada em uma classe a partir de um método"
+                "Um closure em uma função funciona de forma parecida com acessar uma propriedade privada em uma classe a partir de um método"
             ],
             "outputs": []
         },
@@ -132,7 +132,7 @@
         {
             "language": "markdown",
             "source": [
-                "### Stale Clojure é simplesmente uma função que captura variáveis que possuem valores desatualizados.\n"
+                "### Stale closure é simplesmente uma função que captura variáveis que possuem valores desatualizados.\n"
             ],
             "outputs": []
         },
@@ -170,7 +170,7 @@
         {
             "language": "markdown",
             "source": [
-                "Neste exemplo a função log executa a função retornada pela função increment que por sua vez executa 3 console.log, o primeiro corretamente com o valor atual da variável global number, mas os outros 2 com o valor antigo da variável global number, a referência estava presa num clojure de quando foi criada"
+                "Neste exemplo a função log executa a função retornada pela função increment que por sua vez executa 3 console.log, o primeiro corretamente com o valor atual da variável global number, mas os outros 2 com o valor antigo da variável global number, a referência estava presa num closure de quando foi criada"
             ],
             "outputs": []
         }

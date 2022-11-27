@@ -2,16 +2,16 @@
 
 ## Conteúdos
 
-- [Clojure](#clojure)
+- [closure](#closure)
 - [State](#state)
 - [Tracked](#tracked)
 - [Query](#query)
 - [Router](#router)
 - [RouterQuery](#routerquery)
 
-## Clojure <a name = "clojure"></a>
+## closure <a name = "closure"></a>
 
-Algumas apresentações sobre Clojure, Stale Clojure e sua relação com React.
+Algumas apresentações sobre closure, Stale closure e sua relação com React.
 
 ## State <a name = "state"></a>
 
