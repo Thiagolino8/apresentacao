@@ -2,7 +2,7 @@ import { useCallback, useMemo, useState } from 'react'
 
 import { ReactTemplate } from '../templates/ReactTemplate'
 
-export const Staleclosure = () => {
+export const StaleClosure = () => {
 	const [count, setCount] = useState(0)
 	const countByHalf = useMemo(() => count / 2, [])
 	const increment = useCallback(() => setCount(count + 1), [])
